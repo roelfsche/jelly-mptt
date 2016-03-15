@@ -884,7 +884,7 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
 		$end = $root->right;
 		
 		// Find nodes that have slipped out of bounds.
-		$count = DB::select(array('COUNT("*")', 'count'))
+		$count = DB::select(array(Db::expr('count("*")'), 'count'))
             ->from($this->table)
             ->where($this->_scope_column, '=', $root->scope)
             ->and_where_open($this->_left_column, '>', $end)
@@ -896,7 +896,7 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
 			return FALSE;
 		
 		// Find nodes that right value is less or equal as the left value
-		$count = DB::select(array('COUNT("*")', 'count'))
+		$count = DB::select(array(Db::expr('count("*")'), 'count'))
             ->from($this->table)
             ->where($this->_scope_column, '=', $root->scope)
             ->and_where($this->_left_column, '>=', DB::expr('`'.$this->_right_column.'`'))
