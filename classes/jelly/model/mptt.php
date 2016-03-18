@@ -1021,13 +1021,13 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
     /**
      * legt eine Kopie des entsprechenden Root-Knotens (this) an
      * @param Model_User $objUser
-     * @throws DokMa_Exception
+     * @throws Dokma_Exception
      */
     public function copy($objUser)
     {
         if (!$this->is_root())
         {
-            throw new DokMa_Exception('Copy auf NICHT-Root-Knoten aufgerufen');
+            throw new Dokma_Exception('Copy auf NICHT-Root-Knoten aufgerufen');
         }
 
         // kreiere neuen Root
@@ -1165,7 +1165,7 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
         if ($arrHierarchy === NULL)
         {
             // es muss immer einen geben
-            throw new DokMa_Exception('Hierarchie-Daten nicht gefunden.');
+            throw new Dokma_Exception('Hierarchie-Daten nicht gefunden.');
         }
 
         // jetzt noch die Hierarchy
