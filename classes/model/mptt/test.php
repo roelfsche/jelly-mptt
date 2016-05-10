@@ -28,8 +28,8 @@ class Model_MPTT_Test extends Jelly_Model_MPTT {
         $meta->db('unit_testing')
             ->table('jelly_mptt_test')
             ->fields = array(
-            'id' => new Field_Primary,
-            'name' => new Field_String,
+            'id' => Jelly::field('primary'),//new Field_Primary,
+            'name' => Jelly::field('string')//new Field_String,
             );
         
         parent::initialize($meta);
