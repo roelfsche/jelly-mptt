@@ -34,9 +34,9 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
 
     /**
      * Initialize the fields and add MPTT field defaults if not specified
-     * @param  array  $values -> geändert von default = array() auf default = NULL, weil sonst
-     * der Aufruf von construct ein Array weitergibt (leeres) und Jelly dann denkt, es handelt sich
-     * um ein Key, weil es sonst NULL erwartet
+     * @param  array $values -> geändert von default = array() auf default = NULL, weil sonst
+     *                       der Aufruf von construct ein Array weitergibt (leeres) und Jelly dann denkt, es handelt sich
+     *                       um ein Key, weil es sonst NULL erwartet
      * @return void
      */
     public function __construct($values = NULL)
@@ -1394,4 +1394,8 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
         return FALSE;
     }
 
+    public function countChildren()
+    {
+        return $this->get_size() / 2 - 1;
+    }
 }
