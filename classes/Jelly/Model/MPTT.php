@@ -1394,8 +1394,11 @@ abstract class Jelly_Model_MPTT extends Jelly_Model
         return FALSE;
     }
 
-    public function countChildren()
+    /**
+     * @return integer
+     */
+    public function countDescendants()
     {
-        return $this->get_size() / 2 - 1;
+        return max(0, $this->get_size() / 2 - 1);
     }
 }
